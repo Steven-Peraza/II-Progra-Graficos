@@ -441,6 +441,35 @@
 			<key>uniqueIdentifier</key>
 			<string>A4F69AE6-0C62-4C78-8B6E-427A8C55AF9D</string>
 		</dict>
+		<key>A8F7EF91-0559-4707-B6DE-648200B47C88</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>A8F7EF91-0559-4707-B6DE-648200B47C88.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>W</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>SegundaPrograGraficos project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SegundaPrograGraficos</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build SegundaPrograGraficos</string>
+			<key>timeStartedRecording</key>
+			<real>575687218.40362203</real>
+			<key>timeStoppedRecording</key>
+			<real>575687219.45391703</real>
+			<key>title</key>
+			<string>Build SegundaPrograGraficos</string>
+			<key>uniqueIdentifier</key>
+			<string>A8F7EF91-0559-4707-B6DE-648200B47C88</string>
+		</dict>
 		<key>AD095357-77FA-4440-A0E6-8505C69B084F</key>
 		<dict>
 			<key>className</key>
