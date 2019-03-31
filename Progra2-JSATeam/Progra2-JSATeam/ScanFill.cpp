@@ -1,11 +1,11 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 
 
 // Voy a ir modificandolo pero de momento puede sirve para el proposito
 
 #include <stdio.h> 
 #include <math.h> 
-#include <GL/glut.h> 
+#include <GLUT/GLUT.h>
 #define maxHt 1000 
 #define maxWd 1000 
 #define maxVer 10000 

@@ -1,6 +1,6 @@
 
-#include "stdafx.h";
-#include <GL/glut.h>;
+//#include "stdafx.h";
+#include <GLUT/GLUT.h>
 
 void plot(int i, int y) {
 	glVertex2i(i, y);
