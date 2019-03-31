@@ -116,8 +116,15 @@ void MyDisplay() {
     cargarLineas(chepe);
     ScanlineFill(0.2f, 0.2f, 0.2f);
     glFlush();
-    glRotated(30, 0.0, 0.0, 1);
-    glFlush();
+
+}
+
+void rotate(){
+    glPushMatrix();
+    glTranslatef(700,0, 0);
+    glRotatef((GLfloat) 90, 0, 0, 1);
+    glutPostRedisplay();
+    //glPopMatrix();
 }
 
 int main(int argc, char** argv) {
@@ -133,8 +140,11 @@ int main(int argc, char** argv) {
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluOrtho2D(0, 800, 0, 800);
-    
     glutDisplayFunc(MyDisplay);
+    rotate();
+    rotate();
+    //glPopMatrix();
+
     glutMainLoop();
     return 0;
 }
