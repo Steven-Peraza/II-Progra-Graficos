@@ -1,3 +1,5 @@
 ﻿  Progra2-JSATeam.cpp
-c:\users\steven\desktop\tec\semestres\semestre 7\electiva graficos\proyectos\progra2-jsa\ii-progra-graficos\progra2-jsateam\progra2-jsateam\progra2-jsateam.cpp(9): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\steven\desktop\tec\semestres\semestre 7\electiva graficos\proyectos\progra2-jsa\ii-progra-graficos\progra2-jsateam\progra2-jsateam\progra2-jsateam.cpp(147): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+c:\users\steven\desktop\tec\semestres\semestre 7\electiva graficos\proyectos\progra2-jsa\ii-progra-graficos\progra2-jsateam\progra2-jsateam\progra2-jsateam.cpp(148): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+c:\users\steven\desktop\tec\semestres\semestre 7\electiva graficos\proyectos\progra2-jsa\ii-progra-graficos\progra2-jsateam\progra2-jsateam\progra2-jsateam.cpp(157): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
   Progra2-JSATeam.vcxproj -> C:\Users\Steven\Desktop\TEC\Semestres\Semestre 7\Electiva Graficos\Proyectos\Progra2-JSA\II-Progra-Graficos\Progra2-JSATeam\Debug\Progra2-JSATeam.exe
