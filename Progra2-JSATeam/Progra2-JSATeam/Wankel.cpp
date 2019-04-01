@@ -8,5 +8,4 @@ void rotate(int degrees,int cam) {
 	glTranslatef(cam, cam, 0);
 	glRotatef((GLfloat)degrees, 0, 0, 1);
 	glutPostRedisplay();
-	//glPopMatrix();
 }
