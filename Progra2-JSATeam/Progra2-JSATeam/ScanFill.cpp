@@ -1,15 +1,16 @@
-#include "stdafx.h"
+//#include "stdafx.h"
 
 
 // Voy a ir modificandolo pero de momento puede sirve para el proposito
 
 #include <stdio.h> 
 #include <math.h> 
-#include <GL/glut.h> 
+#include <GLUT/GLUT.h>
+#include "RgbImage.h"
+#include <iostream>
 #define maxHt 1000 
 #define maxWd 1000 
-#define maxVer 10000 
-
+#define maxVer 10000
 
 // Start from lower left corner 
 typedef struct edgebucket
@@ -30,6 +31,7 @@ typedef struct edgetabletup
 }EdgeTableTuple;
 
 EdgeTableTuple EdgeTable[maxHt], ActiveEdgeTuple;
+GLuint  texture[7];
 
 
 // Scanline Function 
@@ -97,6 +99,39 @@ void insertionSort(EdgeTableTuple *ett)
 		ett->buckets[j + 1].xofymin = temp.xofymin;
 		ett->buckets[j + 1].slopeinverse = temp.slopeinverse;
 	}
+}
+
+
+
+void loadTextureFromFile(char *filename,int index)
+{
+    glClearColor (0.0, 0.0, 0.0, 0.0);
+    glShadeModel(GL_FLAT);
+    glEnable(GL_DEPTH_TEST);
+    
+    RgbImage theTexMap( filename );
+    
+    glGenTextures(1, &texture[index]);                    // Create The Texture
+    glBindTexture(GL_TEXTURE_2D, texture[index]);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    
+    
+    // Typical Texture Generation Using Data From The Bitmap
+    
+    glTexImage2D(GL_TEXTURE_2D, 0, 3, theTexMap.GetNumCols(), theTexMap.GetNumRows(), 1, GL_RGB, GL_UNSIGNED_BYTE, theTexMap.ImageData() );
+}
+
+
+
+
+void loadTextures(char *filename[]){
+    for ( int  i=0;i<=7;i++)
+    {
+        loadTextureFromFile(filename[i],i);
+    }
 }
 
 
@@ -186,6 +221,8 @@ void updatexbyslopeinv(EdgeTableTuple *Tup)
 		(Tup->buckets[i]).xofymin = (Tup->buckets[i]).xofymin + (Tup->buckets[i]).slopeinverse;
 	}
 }
+
+
 
 
 void ScanlineFill(float R, float G, float B)
@@ -304,7 +341,6 @@ void ScanlineFill(float R, float G, float B)
 					glVertex2i(x1, i);
 					glVertex2i(x2, i);
 					glEnd();
-					glFlush();
 
 					// printf("\nLine drawn from %d,%d to %d,%d",x1,i,x2,i); 
 				}
@@ -319,7 +355,146 @@ void ScanlineFill(float R, float G, float B)
 		updatexbyslopeinv(&ActiveEdgeTuple);
 	}
 
-
+    glFlush();
 	printf("\nScanline filling complete");
 
+}
+
+void ScanlineFill(int textura)
+{
+    /* Follow the following rules:
+     1. Horizontal edges: Do not include in edge table
+     2. Horizontal edges: Drawn either on the bottom or on the top.
+     3. Vertices: If local max or min, then count twice, else count
+     once.
+     4. Either vertices at local minima or at local maxima are drawn.*/
+    
+    
+    int i, j, x1, ymax1, x2, ymax2, FillFlag = 0, coordCount;
+    //glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
+    // we will start from scanline 0;
+    // Repeat until last scanline:
+    glEnable(GL_TEXTURE_2D);
+    glBindTexture(GL_TEXTURE_2D, texture[textura]);
+    for (i = 0; i < maxHt; i++)//4. Increment y by 1 (next scan line)
+    {
+        
+        // 1. Move from ET bucket y to the
+        // AET those edges whose ymin = y (entering edges)
+        for (j = 0; j < EdgeTable[i].countEdgeBucket; j++)
+        {
+            storeEdgeInTuple(&ActiveEdgeTuple, EdgeTable[i].buckets[j].
+                             ymax, EdgeTable[i].buckets[j].xofymin,
+                             EdgeTable[i].buckets[j].slopeinverse);
+        }
+        printTuple(&ActiveEdgeTuple);
+        
+        // 2. Remove from AET those edges for
+        // which y=ymax (not involved in next scan line)
+        removeEdgeByYmax(&ActiveEdgeTuple, i);
+        
+        //sort AET (remember: ET is presorted)
+        insertionSort(&ActiveEdgeTuple);
+        
+        printTuple(&ActiveEdgeTuple);
+        
+        //3. Fill lines on scan line y by using pairs of x-coords from AET
+        j = 0;
+        FillFlag = 0;
+        coordCount = 0;
+        x1 = 0;
+        x2 = 0;
+        ymax1 = 0;
+        ymax2 = 0;
+        GLfloat step = (float)1/800;
+        std::cout << "\n"<< step;
+        while (j < ActiveEdgeTuple.countEdgeBucket)
+        {
+            if (coordCount % 2 == 0)
+            {
+                x1 = (int)(ActiveEdgeTuple.buckets[j].xofymin);
+                ymax1 = ActiveEdgeTuple.buckets[j].ymax;
+                if (x1 == x2)
+                {
+                    /* three cases can arrive-
+                     1. lines are towards top of the intersection
+                     2. lines are towards bottom
+                     3. one line is towards top and other is towards bottom
+                     */
+                    if (((x1 == ymax1) && (x2 != ymax2)) || ((x1 != ymax1) && (x2 == ymax2)))
+                    {
+                        x2 = x1;
+                        ymax2 = ymax1;
+                    }
+                    
+                    else
+                    {
+                        coordCount++;
+                    }
+                }
+                
+                else
+                {
+                    coordCount++;
+                }
+            }
+            else
+            {
+                x2 = (int)ActiveEdgeTuple.buckets[j].xofymin;
+                ymax2 = ActiveEdgeTuple.buckets[j].ymax;
+                
+                FillFlag = 0;
+                
+                // checking for intersection...
+                if (x1 == x2)
+                {
+                    /*three cases can arive-
+                     1. lines are towards top of the intersection
+                     2. lines are towards bottom
+                     3. one line is towards top and other is towards bottom
+                     */
+                    if (((x1 == ymax1) && (x2 != ymax2)) || ((x1 != ymax1) && (x2 == ymax2)))
+                    {
+                        x1 = x2;
+                        ymax1 = ymax2;
+                    }
+                    else
+                    {
+                        coordCount++;
+                        FillFlag = 1;
+                    }
+                }
+                else
+                {
+                    coordCount++;
+                    FillFlag = 1;
+                }
+                
+                
+                if (FillFlag)
+                {
+                    //drawing actual lines...
+                    glBegin(GL_LINES);
+                    glTexCoord2f(x1*step, i*step); glVertex2i(x1, i);
+                    glTexCoord2f(x2*step, i*step); glVertex2i(x2, i);
+                    glEnd();
+                    
+                    
+                    // printf("\nLine drawn from %d,%d to %d,%d",x1,i,x2,i);
+                }
+                
+            }//0,1
+            
+            j++;
+        }
+        
+        
+        // 5. For each nonvertical edge remaining in AET, update x for new y
+        updatexbyslopeinv(&ActiveEdgeTuple);
+    }
+    glDisable(GL_TEXTURE_2D);
+    glFlush();
+    printf("\nScanline filling textura complete");
+    
 }
