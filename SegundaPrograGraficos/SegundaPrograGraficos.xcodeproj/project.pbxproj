@@ -12,6 +12,9 @@
 		B644BD2C225041BB00C538EB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B644BD2B225041BB00C538EB /* OpenGL.framework */; };
 		B644BD3F2250447800C538EB /* Polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B644BD2E2250420500C538EB /* Polygon.cpp */; };
 		B644BD402250447C00C538EB /* ScanFill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B644BD2F2250420500C538EB /* ScanFill.cpp */; };
+		B66195BE2254F98400CC9192 /* stb_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66195BC2254F98400CC9192 /* stb_image.cpp */; };
+		B66195C12254FA7500CC9192 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66195BF2254FA7500CC9192 /* Texture.cpp */; };
+		B66195C722551A2800CC9192 /* RgbImage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B66195C622551A2800CC9192 /* RgbImage.cpp */; };
 		B6F581E022527A1600D2F2C6 /* Wankel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6F581DF22527A1500D2F2C6 /* Wankel.cpp */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +49,13 @@
 		B644BD392250420500C538EB /* Polygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Polygon.h; path = "../../Progra2-JSATeam/Progra2-JSATeam/Polygon.h"; sourceTree = "<group>"; };
 		B644BD3A2250420500C538EB /* ScanFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanFill.h; path = "../../Progra2-JSATeam/Progra2-JSATeam/ScanFill.h"; sourceTree = "<group>"; };
 		B644BD3B2250420500C538EB /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdafx.h; path = "../../Progra2-JSATeam/Progra2-JSATeam/stdafx.h"; sourceTree = "<group>"; };
+		B66195B82254EE4800CC9192 /* Progra2-JSATeam.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = "Progra2-JSATeam.cpp"; path = "../../Progra2-JSATeam/Progra2-JSATeam/Progra2-JSATeam.cpp"; sourceTree = "<group>"; };
+		B66195BC2254F98400CC9192 /* stb_image.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stb_image.cpp; sourceTree = "<group>"; };
+		B66195BD2254F98400CC9192 /* stb_image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		B66195BF2254FA7500CC9192 /* Texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		B66195C02254FA7500CC9192 /* Texture.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Texture.hpp; sourceTree = "<group>"; };
+		B66195C22255067400CC9192 /* RgbImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RgbImage.h; path = vendor/RgbImage.h; sourceTree = SOURCE_ROOT; };
+		B66195C622551A2800CC9192 /* RgbImage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RgbImage.cpp; path = vendor/RgbImage.cpp; sourceTree = SOURCE_ROOT; };
 		B6F581DE22527A1500D2F2C6 /* Wankel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Wankel.h; path = "../../Progra2-JSATeam/Progra2-JSATeam/Wankel.h"; sourceTree = "<group>"; };
 		B6F581DF22527A1500D2F2C6 /* Wankel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Wankel.cpp; path = "../../Progra2-JSATeam/Progra2-JSATeam/Wankel.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +76,7 @@
 		B644BD15225041A700C538EB = {
 			isa = PBXGroup;
 			children = (
+				B66195BA2254F93500CC9192 /* vendor */,
 				B644BD20225041A700C538EB /* SegundaPrograGraficos */,
 				B644BD1F225041A700C538EB /* Products */,
 				B644BD28225041B400C538EB /* Frameworks */,
@@ -84,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				B644BD21225041A700C538EB /* main.cpp */,
+				B66195B82254EE4800CC9192 /* Progra2-JSATeam.cpp */,
 				B6F581DF22527A1500D2F2C6 /* Wankel.cpp */,
 				B6F581DE22527A1500D2F2C6 /* Wankel.h */,
 				B644BD2E2250420500C538EB /* Polygon.cpp */,
@@ -94,6 +106,10 @@
 				B644BD382250420500C538EB /* stdafx.cpp */,
 				B644BD3B2250420500C538EB /* stdafx.h */,
 				B644BD2D2250420500C538EB /* targetver.h */,
+				B66195BF2254FA7500CC9192 /* Texture.cpp */,
+				B66195C22255067400CC9192 /* RgbImage.h */,
+				B66195C622551A2800CC9192 /* RgbImage.cpp */,
+				B66195C02254FA7500CC9192 /* Texture.hpp */,
 			);
 			path = SegundaPrograGraficos;
 			sourceTree = "<group>";
@@ -120,6 +136,23 @@
 			);
 			name = Provincias;
 			path = "../../Progra2-JSATeam/Progra2-JSATeam/Provincias";
+			sourceTree = "<group>";
+		};
+		B66195BA2254F93500CC9192 /* vendor */ = {
+			isa = PBXGroup;
+			children = (
+				B66195BB2254F95500CC9192 /* stb_image */,
+			);
+			path = vendor;
+			sourceTree = "<group>";
+		};
+		B66195BB2254F95500CC9192 /* stb_image */ = {
+			isa = PBXGroup;
+			children = (
+				B66195BC2254F98400CC9192 /* stb_image.cpp */,
+				B66195BD2254F98400CC9192 /* stb_image.h */,
+			);
+			path = stb_image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +213,9 @@
 			files = (
 				B644BD402250447C00C538EB /* ScanFill.cpp in Sources */,
 				B6F581E022527A1600D2F2C6 /* Wankel.cpp in Sources */,
+				B66195C722551A2800CC9192 /* RgbImage.cpp in Sources */,
+				B66195BE2254F98400CC9192 /* stb_image.cpp in Sources */,
+				B66195C12254FA7500CC9192 /* Texture.cpp in Sources */,
 				B644BD3F2250447800C538EB /* Polygon.cpp in Sources */,
 				B644BD22225041A700C538EB /* main.cpp in Sources */,
 			);

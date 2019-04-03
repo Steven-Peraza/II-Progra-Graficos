@@ -30,3 +30,5 @@ void storeEdgeInTable(int x1, int y1, int x2, int y2);
 void removeEdgeByYmax(EdgeTableTuple *Tup, int yy);
 void updatexbyslopeinv(EdgeTableTuple *Tup);
 void ScanlineFill(float R, float G, float B);
+void loadTextures(char* filename[]);
+void ScanlineFill(int textura);
