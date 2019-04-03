@@ -1,5 +1,5 @@
 
-#include <GL/glut.h> 
+#include <GLUT/GLUT.h> 
 
 
 

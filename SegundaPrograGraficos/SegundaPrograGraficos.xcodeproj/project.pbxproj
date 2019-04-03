@@ -12,6 +12,7 @@
 		B644BD2C225041BB00C538EB /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B644BD2B225041BB00C538EB /* OpenGL.framework */; };
 		B644BD3F2250447800C538EB /* Polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B644BD2E2250420500C538EB /* Polygon.cpp */; };
 		B644BD402250447C00C538EB /* ScanFill.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B644BD2F2250420500C538EB /* ScanFill.cpp */; };
+		B6F581E022527A1600D2F2C6 /* Wankel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B6F581DF22527A1500D2F2C6 /* Wankel.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +46,8 @@
 		B644BD392250420500C538EB /* Polygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Polygon.h; path = "../../Progra2-JSATeam/Progra2-JSATeam/Polygon.h"; sourceTree = "<group>"; };
 		B644BD3A2250420500C538EB /* ScanFill.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScanFill.h; path = "../../Progra2-JSATeam/Progra2-JSATeam/ScanFill.h"; sourceTree = "<group>"; };
 		B644BD3B2250420500C538EB /* stdafx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = stdafx.h; path = "../../Progra2-JSATeam/Progra2-JSATeam/stdafx.h"; sourceTree = "<group>"; };
+		B6F581DE22527A1500D2F2C6 /* Wankel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Wankel.h; path = "../../Progra2-JSATeam/Progra2-JSATeam/Wankel.h"; sourceTree = "<group>"; };
+		B6F581DF22527A1500D2F2C6 /* Wankel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Wankel.cpp; path = "../../Progra2-JSATeam/Progra2-JSATeam/Wankel.cpp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				B644BD21225041A700C538EB /* main.cpp */,
+				B6F581DF22527A1500D2F2C6 /* Wankel.cpp */,
+				B6F581DE22527A1500D2F2C6 /* Wankel.h */,
 				B644BD2E2250420500C538EB /* Polygon.cpp */,
 				B644BD392250420500C538EB /* Polygon.h */,
 				B644BD302250420500C538EB /* Provincias */,
@@ -174,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B644BD402250447C00C538EB /* ScanFill.cpp in Sources */,
+				B6F581E022527A1600D2F2C6 /* Wankel.cpp in Sources */,
 				B644BD3F2250447800C538EB /* Polygon.cpp in Sources */,
 				B644BD22225041A700C538EB /* main.cpp in Sources */,
 			);

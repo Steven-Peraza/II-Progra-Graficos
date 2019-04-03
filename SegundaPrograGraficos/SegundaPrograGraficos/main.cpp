@@ -10,6 +10,8 @@
 #include <GLUT/GLUT.h>
 #include "Polygon.h"
 #include <stdio.h>
+#include <stdlib.h>
+#include "Wankel.h"
 
 
 using namespace std;
@@ -24,14 +26,13 @@ char limoncho[] = "Provincias/limon.txt";
 char punta[] = "Provincias/puntarenas.txt";
 char chepe[] = "Provincias/sanjose.txt";
 
-/*FILE *papa;
- FILE *guana;
- 
- FILE *flores;
- FILE *limoncho;
- 
- FILE *;
- FILE *fp;*/
+bool borders, philly, texmex, sanic;
+
+int resetCounter = 0;
+
+double rotate_by_key = 0;
+double rotate_x = 0;
+
 
 //std::pair <std::pair <int, int>, std::pair <int, int>> * tablaLineas;;
 
@@ -46,7 +47,7 @@ void cargarLineas(char * provAct)
         return;
     }
     
-    int count = 0, x1 = 0, y1 = 0, x2 = 0, y2 = 0;
+    int count = 0, x1, y1, x2, y2;
     rewind(provincias);
     while (!feof(provincias))
     {
@@ -71,29 +72,14 @@ void cargarLineas(char * provAct)
             glEnd();
             storeEdgeInTable(x1*2, y1*2, x2*2, y2*2);//storage of edges in edge table.
             
+            
             glFlush();
         }
     }
-    
-    /*
-     for (int i = 0; i < lineas; i++)
-     {
-     x1 = rand() % resolux + 1;
-     x2 = rand() % resolux + 1;
-     y1 = rand() % resolux + 1;
-     y2 = rand() % resolux + 1;
-     //printf("\nx1 = %d, y1 = %d, x2 = %d, y2 = %d",x1,y1,x2,y2);
-     // se almacena el par de pares dentro de la tabla de lineas
-     tablaLineas[i] = std::make_pair(std::make_pair(x1, y1), std::make_pair(x2, y2));
-     }*/
 }
 
 
-
-void MyDisplay() {
-    glClear(GL_COLOR_BUFFER_BIT);
-    glViewport(0, 0, 500, 500);
-    glColor3f(0.0, 1.0, 1.0);
+void ScanFill() {
     initEdgeTable();
     cargarLineas(mangos);
     ScanlineFill(0.7f, 0.7f, 0.0f);
@@ -115,16 +101,166 @@ void MyDisplay() {
     initEdgeTable();
     cargarLineas(chepe);
     ScanlineFill(0.2f, 0.2f, 0.2f);
+    
     glFlush();
-
 }
 
-void rotate(){
+void borderLineCR() {
+    glColor3f(0.7f, 0.7f, 0.0f);
+    cargarLineas(mangos);
+    
+    glColor3f(0.0f, 0.0f, 0.5f);
+    cargarLineas(papa);
+    
+    glColor3f(0.7f, 0.2f, 0.5f);
+    cargarLineas(guana);
+    
+    glColor3f(0.7f, 0.2f, 0.2f);
+    cargarLineas(flores);
+    
+    glColor3f(0.0f, 0.5f, 0.0f);
+    cargarLineas(limoncho);
+    
+    glColor3f(0.1f, 0.2f, 0.2f);
+    cargarLineas(punta);
+    
+    glColor3f(0.2f, 0.2f, 0.2f);
+    cargarLineas(chepe);
+    
+    glFlush();
+}
+
+void restart() {
+    glClear(GL_COLOR_BUFFER_BIT);
+    glViewport(0, 0, 500, 500);
+    glColor3f(0.0, 1.0, 1.0);
+    for (int i = 0; i < resetCounter; i++)
+    {
+        glPopMatrix();
+    }
+    resetCounter = 0;
+    glFlush();
+}
+
+void mazda(int x, int y) {
     glPushMatrix();
-    glTranslatef(700,0, 0);
-    glRotatef((GLfloat) 90, 0, 0, 1);
+    resetCounter++;
+    glTranslatef(x, y, 0);
+    glScalef(rotate_x, rotate_x, 1.0f);
+    //ifs
+    
+    borderLineCR();
+}
+
+void autobots(int x, int y) {
+    resetCounter++;
+    glPushMatrix();
+    glTranslatef(x, y, 0);
+    //IFS
+}
+
+void MyDisplay() {
+    glClear(GL_COLOR_BUFFER_BIT);
+    glViewport(0, 0, 500, 500);
+    glColor3f(0.0, 1.0, 1.0);
+    glFlush();
+}
+
+void shiftry() {
+    int modi = glutGetModifiers();
+    if (modi == GLUT_ACTIVE_CTRL)
+        sanic = true;
+    else
+        sanic = false;
+}
+
+void specialKeys(int key, int x, int y)
+{
+    float fraction = 0.1f;
+    if (key == GLUT_KEY_UP) {
+        shiftry();
+        if (!sanic)
+            rotate_x = 0.8; // Or whatever you want the step to be
+        else
+            rotate_x = 0.5;
+        mazda(100,75);
+        
+    }
+    
+    if (key == GLUT_KEY_DOWN) {
+        shiftry();
+        if (!sanic)
+            rotate_x = 1.2; // Or whatever you want the step to be
+        else
+            rotate_x = 2.0;
+        mazda(-100,-75);
+    }
+    if (key == GLUT_KEY_LEFT) {
+        resetCounter++;
+        shiftry();
+        if (!sanic)
+            rotate(5, 150);
+        else
+            rotate(25, 150);
+    }
+    
+    if (key == GLUT_KEY_RIGHT) {
+        resetCounter++;
+        shiftry();
+        if (!sanic)
+            rotate(-5, -150);
+        else
+            rotate(-25, -150);
+    }
+    if (key == GLUT_KEY_F1)
+        borderLineCR();
+    if (key == GLUT_KEY_F2)
+        ScanFill();
+    if (key == GLUT_KEY_F3)
+        printf("TEXTUREANDO... XD");
+    
     glutPostRedisplay();
-    //glPopMatrix();
+    
+}
+
+void normalKeys(unsigned char key, int x, int y)
+{
+    float move_unit = 0.02f;
+    if (key == 'w') {
+        shiftry();
+        if (!sanic)
+            autobots(0, 100);
+        else
+            autobots(0, 200);
+    }
+    if (key == 'a') {
+        shiftry();
+        if (!sanic)
+            autobots(-100, 0);
+        else
+            autobots(-200, 0);
+    }
+    if (key == 's') {
+        shiftry();
+        if (!sanic)
+            autobots(0, -100);
+        else
+            autobots(0, -200);
+    }
+    if (key == 'd') {
+        shiftry();
+        if (!sanic)
+            autobots(100, 0);
+        else
+            autobots(200, 0);
+    }
+    if (key == 'r')
+        restart();
+    if (key == 'f')
+        exit(EXIT_SUCCESS);
+    
+    glutPostRedisplay();
+    
 }
 
 int main(int argc, char** argv) {
@@ -140,11 +276,12 @@ int main(int argc, char** argv) {
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     gluOrtho2D(0, 800, 0, 800);
+    
     glutDisplayFunc(MyDisplay);
-    rotate();
-    rotate();
-    //glPopMatrix();
-
+    glutSpecialFunc(specialKeys);
+    glutKeyboardFunc(normalKeys);
+    
+    
     glutMainLoop();
     return 0;
 }

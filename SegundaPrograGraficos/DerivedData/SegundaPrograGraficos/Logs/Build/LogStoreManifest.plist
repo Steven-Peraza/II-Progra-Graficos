@@ -35,6 +35,209 @@
 			<key>uniqueIdentifier</key>
 			<string>17B1C1CD-8CDA-4B3E-AC56-2DA05E5E956B</string>
 		</dict>
+		<key>34BA0ED4-23FE-48FF-BE2B-E45C81424C57</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>34BA0ED4-23FE-48FF-BE2B-E45C81424C57.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>SegundaPrograGraficos project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SegundaPrograGraficos</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build SegundaPrograGraficos</string>
+			<key>timeStartedRecording</key>
+			<real>575830571.34863198</real>
+			<key>timeStoppedRecording</key>
+			<real>575830571.60975397</real>
+			<key>title</key>
+			<string>Build SegundaPrograGraficos</string>
+			<key>uniqueIdentifier</key>
+			<string>34BA0ED4-23FE-48FF-BE2B-E45C81424C57</string>
+		</dict>
+		<key>545CE6BD-3CEC-47E0-B076-2274EB2B387D</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>545CE6BD-3CEC-47E0-B076-2274EB2B387D.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>W</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>SegundaPrograGraficos project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SegundaPrograGraficos</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build SegundaPrograGraficos</string>
+			<key>timeStartedRecording</key>
+			<real>575830823.45542002</real>
+			<key>timeStoppedRecording</key>
+			<real>575830824.22660899</real>
+			<key>title</key>
+			<string>Build SegundaPrograGraficos</string>
+			<key>uniqueIdentifier</key>
+			<string>545CE6BD-3CEC-47E0-B076-2274EB2B387D</string>
+		</dict>
+		<key>5A5B1E81-E28E-4526-B604-848B1F7BACBB</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>5A5B1E81-E28E-4526-B604-848B1F7BACBB.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>SegundaPrograGraficos project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SegundaPrograGraficos</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build SegundaPrograGraficos</string>
+			<key>timeStartedRecording</key>
+			<real>575830616.10971296</real>
+			<key>timeStoppedRecording</key>
+			<real>575830616.51770198</real>
+			<key>title</key>
+			<string>Build SegundaPrograGraficos</string>
+			<key>uniqueIdentifier</key>
+			<string>5A5B1E81-E28E-4526-B604-848B1F7BACBB</string>
+		</dict>
+		<key>7510C50E-4D68-4E6E-93FE-04BC02403E47</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>7510C50E-4D68-4E6E-93FE-04BC02403E47.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>SegundaPrograGraficos project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SegundaPrograGraficos</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build SegundaPrograGraficos</string>
+			<key>timeStartedRecording</key>
+			<real>575830553.45278001</real>
+			<key>timeStoppedRecording</key>
+			<real>575830553.89207494</real>
+			<key>title</key>
+			<string>Build SegundaPrograGraficos</string>
+			<key>uniqueIdentifier</key>
+			<string>7510C50E-4D68-4E6E-93FE-04BC02403E47</string>
+		</dict>
+		<key>C88DA574-81B9-4E70-BC8E-A8ECA0FE69E3</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>C88DA574-81B9-4E70-BC8E-A8ECA0FE69E3.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>W</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>SegundaPrograGraficos project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SegundaPrograGraficos</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build SegundaPrograGraficos</string>
+			<key>timeStartedRecording</key>
+			<real>575830402.344926</real>
+			<key>timeStoppedRecording</key>
+			<real>575830403.65171599</real>
+			<key>title</key>
+			<string>Build SegundaPrograGraficos</string>
+			<key>uniqueIdentifier</key>
+			<string>C88DA574-81B9-4E70-BC8E-A8ECA0FE69E3</string>
+		</dict>
+		<key>CE11028C-65CF-4C34-9FFB-7AAD04D335A9</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>CE11028C-65CF-4C34-9FFB-7AAD04D335A9.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>SegundaPrograGraficos project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SegundaPrograGraficos</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build SegundaPrograGraficos</string>
+			<key>timeStartedRecording</key>
+			<real>575830603.35106695</real>
+			<key>timeStoppedRecording</key>
+			<real>575830603.52509201</real>
+			<key>title</key>
+			<string>Build SegundaPrograGraficos</string>
+			<key>uniqueIdentifier</key>
+			<string>CE11028C-65CF-4C34-9FFB-7AAD04D335A9</string>
+		</dict>
+		<key>D70EA70A-CD65-4507-8792-A15A8985C14C</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>D70EA70A-CD65-4507-8792-A15A8985C14C.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>W</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>SegundaPrograGraficos project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SegundaPrograGraficos</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build SegundaPrograGraficos</string>
+			<key>timeStartedRecording</key>
+			<real>575830852.65315199</real>
+			<key>timeStoppedRecording</key>
+			<real>575830853.38719702</real>
+			<key>title</key>
+			<string>Build SegundaPrograGraficos</string>
+			<key>uniqueIdentifier</key>
+			<string>D70EA70A-CD65-4507-8792-A15A8985C14C</string>
+		</dict>
 	</dict>
 </dict>
 </plist>
