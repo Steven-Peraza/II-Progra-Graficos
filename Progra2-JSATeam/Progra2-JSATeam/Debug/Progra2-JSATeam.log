@@ -1,3 +1,5 @@
-﻿  Wankel.cpp
-c:\users\steven\desktop\tec\semestres\semestre 7\electiva graficos\proyectos\progra2-jsa\ii-progra-graficos\progra2-jsateam\progra2-jsateam\wankel.cpp(8): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
-  Progra2-JSATeam.vcxproj -> C:\Users\Steven\Desktop\TEC\Semestres\Semestre 7\Electiva Graficos\Proyectos\Progra2-JSA\II-Progra-Graficos\Progra2-JSATeam\Debug\Progra2-JSATeam.exe
+﻿  Progra2-JSATeam.cpp
+c:\users\usuario.angelo\desktop\gitkraken\ii-progra-graficos\progra2-jsateam\progra2-jsateam\progra2-jsateam.cpp(156): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+c:\users\usuario.angelo\desktop\gitkraken\ii-progra-graficos\progra2-jsateam\progra2-jsateam\progra2-jsateam.cpp(157): warning C4244: 'argumento': conversión de 'double' a 'GLfloat'; posible pérdida de datos
+c:\users\usuario.angelo\desktop\gitkraken\ii-progra-graficos\progra2-jsateam\progra2-jsateam\progra2-jsateam.cpp(175): warning C4244: 'argumento': conversión de 'int' a 'GLfloat'; posible pérdida de datos
+  Progra2-JSATeam.vcxproj -> C:\Users\Usuario.ANGELO\Desktop\GitKraken\II-Progra-Graficos\Progra2-JSATeam\Debug\Progra2-JSATeam.exe
