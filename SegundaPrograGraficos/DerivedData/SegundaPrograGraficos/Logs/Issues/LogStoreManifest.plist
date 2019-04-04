@@ -5,7 +5,31 @@
 	<key>logFormatVersion</key>
 	<integer>9</integer>
 	<key>logs</key>
-	<dict/>
+	<dict>
+		<key>CDAC9A17-975A-4CE9-88FB-242BA59C997A</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.tool</string>
+			<key>fileName</key>
+			<string>CDAC9A17-975A-4CE9-88FB-242BA59C997A.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>W</string>
+			<key>signature</key>
+			<string>SegundaPrograGraficos-dplsxldqaufxnlgzdtkpwrnwhiys</string>
+			<key>timeStartedRecording</key>
+			<real>576040377.54497004</real>
+			<key>timeStoppedRecording</key>
+			<real>576040377.55232704</real>
+			<key>title</key>
+			<string>Build target SegundaPrograGraficos</string>
+			<key>uniqueIdentifier</key>
+			<string>CDAC9A17-975A-4CE9-88FB-242BA59C997A</string>
+		</dict>
+	</dict>
 	<key>preserveOldLogs</key>
 	<true/>
 </dict>

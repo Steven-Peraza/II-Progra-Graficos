@@ -134,10 +134,10 @@ void TextureFill() {
     ScanlineFill(3);
     initEdgeTable();
     cargarLineas(limoncho);
-    ScanlineFill(4);
+    ScanlineFill(5);
     initEdgeTable();
     cargarLineas(punta);
-    ScanlineFill(5);
+    ScanlineFill(4);
     initEdgeTable();
     cargarLineas(chepe);
     ScanlineFill(6);
@@ -171,19 +171,27 @@ void borderLineCR() {
     
     glFlush();
 }
+void pinta() {
+    
+    if (tipo_sombreado == 0) { borderLineCR(); }
+    if (tipo_sombreado == 1) { ScanFill(); }
+    if (tipo_sombreado == 2) { TextureFill(); }
+    glutPostRedisplay();
+}
 
 void restart() {
     
     glClear(GL_COLOR_BUFFER_BIT);
     glViewport(0, 0, 500, 500);
-    glColor3f(0.0, 1.0, 1.0);
+    glColor3f(1.0, 1.0, 1.0);
     for (int i = 0; i < resetCounter; i++)
     {
         glPopMatrix();
     }
     resetCounter = 0;
-    glFlush();
 }
+
+
 
 void mazda(int x, int y) {
     glPushMatrix();
@@ -191,24 +199,16 @@ void mazda(int x, int y) {
     glTranslatef(x, y, 0);
     glScalef(rotate_x, rotate_x, 1.0f);
     //ifs
-    
-    borderLineCR();
+    //borderLineCR();
 }
 
-void pinta() {
-    
-    if (tipo_sombreado == 0) { borderLineCR(); }
-    if (tipo_sombreado == 1) { ScanFill(); }
-    if (tipo_sombreado == 2) { TextureFill(); }
-    
-}
+
 
 void autobots(int x, int y) {
     
     resetCounter++;
     glPushMatrix();
     glTranslatef(x, y, 0);
-    pinta();
     
     //IFS
 }
@@ -217,7 +217,7 @@ void MyDisplay() {
     
     glClear(GL_COLOR_BUFFER_BIT);
     glViewport(0, 0, 500, 500);
-    glColor3f(0.0, 1.0, 1.0);
+    glColor3f(1.0, 1.0, 1.0);
     //glFlush();
 }
 
@@ -260,11 +260,11 @@ void specialKeys(int key, int x, int y)
         
         if (!sanic) {
             rotate(5, 150);
-            pinta();
+            
         }
         else {
             rotate(25, 150);
-            pinta();
+            
             
         }
     }
@@ -276,11 +276,11 @@ void specialKeys(int key, int x, int y)
         
         if (!sanic) {
             rotate(-5, -150);
-            pinta();
+            
         }
         else {
             rotate(-25, -150);
-            pinta();
+            
         }
     }
     
@@ -292,7 +292,7 @@ void specialKeys(int key, int x, int y)
     if (key == GLUT_KEY_F3)
         tipo_sombreado = 2;
     
-    glutPostRedisplay();
+    pinta();
     
 }
 
@@ -356,8 +356,7 @@ void normalKeys(unsigned char key, int x, int y)
     if (key == 'f')
         exit(0);
     
-    glutPostRedisplay();
-    
+    pinta();
 }
 
 char* filename[] = {"texturas/1.bmp","texturas/2.bmp","texturas/3.bmp","texturas/4.bmp","texturas/5.bmp","texturas/6.bmp","texturas/7.bmp"};
